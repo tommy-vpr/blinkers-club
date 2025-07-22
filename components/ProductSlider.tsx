@@ -54,7 +54,7 @@ const data = [
   {
     category: "2G Flip",
     title: "Green Apple/Blue Nerd",
-    src: "/images/geen-apple-blue-nerds.webp",
+    src: "/images/green-apple-blue-nerds.webp",
     content: <DummyContent />,
   },
   {
