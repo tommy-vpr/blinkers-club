@@ -166,7 +166,7 @@ export const Card = ({
     <>
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        className="border border-zinc-700 relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden 
+        className="cursor-pointer border border-zinc-700 relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden 
         rounded-3xl md:h-[40rem] md:w-96 bg-white"
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full" />
