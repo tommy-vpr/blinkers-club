@@ -3,24 +3,24 @@ import { data } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 
+// Update static paths
 export async function generateStaticParams() {
-  return data.map((item) => ({
-    id: item.id.toString(),
-  }));
+  return data.map((item) => ({ id: item.id.toString() }));
 }
 
-export default async function ProductPage({
+// Fix the component signature to expect a Promise
+export default async function Page({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const product = data.find((item) => item.id.toString() === params.id);
+  const { id } = await params; // ✅ await here
+
+  const product = data.find((item) => item.id.toString() === id);
   if (!product) return notFound();
 
-  console.log(params.id);
-
   const recommendations = data
-    .filter((item) => item.id.toString() !== params.id)
+    .filter((item) => item.id.toString() !== id)
     .slice(0, 4);
 
   return (
