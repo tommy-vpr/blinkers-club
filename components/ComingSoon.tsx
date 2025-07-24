@@ -12,7 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 const schema = z.object({
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
-  email: z.string().email("Invalid email"),
+  email: z.email("Invalid email"),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -44,11 +44,20 @@ const ComingSoon = () => {
   }, []);
 
   const onSubmit = async (data: FormData) => {
-    // Simulate async submit
-    await new Promise((res) => setTimeout(res, 1000));
-    console.log("Submitted:", data);
-    setSubmitted(true);
-    reset();
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        reset();
+      }
+    } catch (err) {
+      console.error("Error submitting form", err);
+    }
   };
 
   return (
@@ -125,7 +134,7 @@ const ComingSoon = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full mt-2 py-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-md transition-colors disabled:opacity-50"
+            className="cursor-pointer w-full mt-2 py-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-md transition-colors disabled:opacity-50"
           >
             {isSubmitting ? "Submitting..." : "Notify Me"}
           </button>
