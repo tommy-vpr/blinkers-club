@@ -7,10 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Drip from "@/components/DripOne";
 import Drip2 from "@/components/DripTwo";
 import Hero from "@/components/Hero";
-import { div } from "motion/react-client";
-import ComingSoon from "@/components/ComingSoon";
-import { HeroHighlightDemo } from "@/components/highlight";
-import { TextHoverEffectDemo } from "@/components/TextHoverEffectDemo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,9 +34,26 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="w-full flex justify-center items-center min-h-screen">
-      <ComingSoon />
-    </div>
+    <>
+      <div className="relative h-[300vh] overflow-hidden">
+        {/* Hero */}
+        <Hero />
+
+        {/* First Drip at top */}
+        <div className="absolute top-0 left-0 w-full z-20">
+          <Drip
+            image="/images/drip-bg-1.webp"
+            bgColor="bg-[#333]"
+            containerBg="bg-transparent"
+          />
+        </div>
+
+        {/* Second Drip underneath */}
+        <div className="absolute top-0 left-0 w-full z-10">
+          <Drip2 image="/images/drip-bg-2.webp" bgColor="bg-[#222]" />
+        </div>
+      </div>
+    </>
   );
 };
 
