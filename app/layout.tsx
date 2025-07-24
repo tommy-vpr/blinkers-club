@@ -16,27 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Blinkers – Hit It Til It Blinks",
-  description: "Premium, lab-tested vape devices, cartridges, and pre‑rolls.",
-  openGraph: {
-    title: "Blinkers – Hit It Til It Blinks",
-    description:
-      "Premium, lab-tested THC vape devices, cartridges, and pre‑rolls.",
-    images: [
-      {
-        url: "",
-        width: 1200,
-        height: 630,
-        alt: "Blinkers Logo – Hit It Til It Blinks",
-      },
-    ],
-    siteName: "Blinkers",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Blinkers – Hit It Til It Blinks",
-    description:
-      "Premium, lab-tested THC vape devices, cartridges, and pre‑rolls.",
-    images: [""],
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
