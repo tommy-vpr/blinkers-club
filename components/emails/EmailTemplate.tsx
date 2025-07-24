@@ -24,7 +24,7 @@ type Props = {
   lineItems: LineItem[];
 };
 
-export default function ReviewReminderEamil({
+export default function EmailTemplate({
   customerName = "there",
   lineItems,
 }: Props) {
@@ -49,11 +49,7 @@ export default function ReviewReminderEamil({
           </Text>
 
           <Hr />
-          <Text style={footer}>
-            © 2025 Blinkers, All Rights Reserved
-            <br />
-            somewhere in walnut
-          </Text>
+          <Text style={footer}>© 2025 Blinkers, All Rights Reserved</Text>
         </Container>
       </Body>
     </Html>
