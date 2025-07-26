@@ -10,6 +10,8 @@ import Link from "next/link";
 
 const spaceMono = Space_Mono({
   weight: ["400"],
+  subsets: ["latin"], // ✅ specify subset(s)
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
