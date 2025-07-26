@@ -7,6 +7,12 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Geist, Geist_Mono, Space_Mono } from "next/font/google";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
 // ✅ Zod Schema
 const schema = z.object({
@@ -61,7 +67,9 @@ const ComingSoon = () => {
   };
 
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden px-4">
+    <div
+      className={`${geistSans.className} relative w-full min-h-screen flex items-center justify-center overflow-hidden px-4`}
+    >
       {/* 🔹 Background Video Layer */}
       <div className="absolute bottom-0 z-10 w-full h-72 bg-gradient-to-t from-black to-transparent"></div>
 

@@ -6,6 +6,8 @@ import ClientLayout from "@/components/ClientLayout";
 
 const spaceMono = Space_Mono({
   weight: ["400"],
+  subsets: ["latin"], // ✅ specify subset(s)
+  preload: true,
 });
 
 const geistSans = Geist({
