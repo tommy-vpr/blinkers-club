@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { data } from "@/data";
 
-const ProductGrid = () => {
+const LandingProductGrid = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-50">
       {data.map((item) => (
-        <Link key={item.id} href={`/products/${item.id}`}>
+        <Link key={item.id} href={`/landing/products/${item.id}`}>
           <div className="h-full">
             {" "}
             {/* ensures grid cell stretches */}
@@ -36,4 +36,4 @@ const ProductGrid = () => {
   );
 };
 
-export default ProductGrid;
+export default LandingProductGrid;

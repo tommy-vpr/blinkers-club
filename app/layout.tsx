@@ -1,8 +1,12 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Space_Mono } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
+
+const spaceMono = Space_Mono({
+  weight: ["400"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,10 +35,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.png" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#111]`}
-      >
-        <ClientLayout>{children}</ClientLayout>
+      <body className={`${spaceMono.className} antialiased bg-black`}>
+        {/* <ClientLayout>{children}</ClientLayout> */}
+        {children}
       </body>
     </html>
   );
