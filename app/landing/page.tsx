@@ -62,24 +62,30 @@ const page = () => {
               Merch
             </li>
           </Link>
-          <li
-            className="w-fit text-center cursor-pointer hover:bg-emerald-500 transition 
+          <Link href={"/landing/about"}>
+            <li
+              className="w-fit text-center cursor-pointer hover:bg-emerald-500 transition 
           duration-200 hover:translate-x-1.5 px-3 py-1"
-          >
-            About
-          </li>
-          <li
-            className="w-fit text-center cursor-pointer hover:bg-emerald-500 transition 
+            >
+              About
+            </li>
+          </Link>
+          <Link href={"/landing/faq"}>
+            <li
+              className="w-fit text-center cursor-pointer hover:bg-emerald-500 transition 
           duration-200 hover:translate-x-1.5 px-3 py-1"
-          >
-            FAQ
-          </li>
-          <li
-            className="w-fit text-center cursor-pointer hover:bg-emerald-500 transition 
+            >
+              FAQ
+            </li>
+          </Link>
+          <Link href={"/landing/contact"}>
+            <li
+              className="w-fit text-center cursor-pointer hover:bg-emerald-500 transition 
           duration-200 hover:translate-x-1.5 px-3 py-1"
-          >
-            Contact
-          </li>
+            >
+              Contact
+            </li>
+          </Link>
         </ul>
         <div className="flex justify-center gap-8 text-gray-500 mt-16">
           <IconBrandFacebook
