@@ -40,7 +40,7 @@ const Footer = () => {
             <h3 className="text-sm text-gray-400">Resources</h3>
             <li>Contact</li>
             <li>FAQ</li>
-            <li></li>
+            <li>COA</li>
           </ul>
           <ul className="flex flex-col gap-2">
             <h3 className="text-sm text-gray-400">Community</h3>
