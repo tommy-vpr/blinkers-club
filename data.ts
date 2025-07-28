@@ -43,3 +43,62 @@ export const data: ProductItem[] = [
     price: 19.99,
   },
 ];
+
+export const merchData: ProductItem[] = [
+  {
+    id: 1,
+    category: "Clothing",
+    title: "Black Tee",
+    src: "/images/clothing.webp",
+    price: 29.99,
+  },
+  {
+    id: 2,
+    category: "Clothing",
+    title: "Black Tee",
+    src: "/images/clothing.webp",
+    price: 29.99,
+  },
+  {
+    id: 3,
+    category: "Accessories",
+    title: "Cap",
+    src: "/images/accessories.webp",
+    price: 19.99,
+  },
+  {
+    id: 4,
+    category: "Accessories",
+    title: "Bottle Opener",
+    src: "/images/bottle-opener.webp",
+    price: 9.99,
+  },
+  {
+    id: 5,
+    category: "Clothing",
+    title: "Black Tee",
+    src: "/images/clothing.webp",
+    price: 29.99,
+  },
+  {
+    id: 6,
+    category: "Clothing",
+    title: "Black Tee",
+    src: "/images/clothing.webp",
+    price: 29.99,
+  },
+  {
+    id: 7,
+    category: "Accessories",
+    title: "Cap",
+    src: "/images/accessories.webp",
+    price: 19.99,
+  },
+  {
+    id: 8,
+    category: "Accessories",
+    title: "Bottle Opener",
+    src: "/images/bottle-opener.webp",
+    price: 9.99,
+  },
+];

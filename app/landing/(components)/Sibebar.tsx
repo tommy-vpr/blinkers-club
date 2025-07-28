@@ -1,22 +1,23 @@
+// components/SidebarLinks.tsx
 "use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const Sibebar = () => {
+const SidebarLinks = () => {
   const pathname = usePathname();
 
   const links = [
     { name: "Shop", href: "/landing/shop" },
-    { name: "Merch", href: "/landing/Merch" },
+    { name: "Merch", href: "/landing/merch" },
     { name: "About", href: "/landing/about" },
     { name: "FAQ", href: "/landing/faq" },
     { name: "Contact", href: "/landing/contact" },
   ];
 
   return (
-    <div>
+    <div className="hidden md:block">
       <ul className="flex flex-col gap-2 items-end text-xs">
         {links.map(({ name, href }) => (
           <Link key={name} href={href}>
@@ -34,4 +35,4 @@ const Sibebar = () => {
   );
 };
 
-export default Sibebar;
+export default SidebarLinks;

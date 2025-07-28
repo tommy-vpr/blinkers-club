@@ -71,7 +71,7 @@ export default function NeonFooter() {
           <IconBrandInstagram />
         </div>
         <p className="text-center w-full text-xs text-zinc-700 p-4 border-t border-gray-700/20">
-          © Biz {new Date().getFullYear()}
+          © B {new Date().getFullYear()}
         </p>
       </div>
     </div>

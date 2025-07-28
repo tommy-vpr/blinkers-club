@@ -54,48 +54,57 @@ const faqs = [
 ];
 
 export default function FaqAccordion() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openSet, setOpenSet] = useState<Set<number>>(new Set());
 
-  const toggle = (i: number) => {
-    setOpenIndex(openIndex === i ? null : i);
+  const toggle = (index: number) => {
+    const updatedSet = new Set(openSet);
+    if (updatedSet.has(index)) {
+      updatedSet.delete(index);
+    } else {
+      updatedSet.add(index);
+    }
+    setOpenSet(updatedSet);
   };
 
   return (
     <div className="w-full px-4 py-10 bg-gray-50">
       <h2 className="text-2xl font-bold mb-6 text-center">FAQ</h2>
       <div className="space-y-4 m-auto max-w-xl w-full">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="border border-gray-200 rounded-md overflow-hidden"
-          >
-            <button
-              onClick={() => toggle(index)}
-              className="cursor-pointer w-full text-sm flex justify-between items-center text-left px-4 py-3 hover:bg-gray-100 transition"
-            >
-              <span className={clsx(openIndex === index && "opacity-40")}>
-                {faq.question}
-              </span>
-
-              <ChevronDown
-                className={clsx(
-                  "h-5 w-5 transform transition-transform duration-300",
-                  openIndex === index && "rotate-180"
-                )}
-              />
-            </button>
+        {faqs.map((faq, index) => {
+          const isOpen = openSet.has(index);
+          return (
             <div
-              className={clsx(
-                "px-4 pt-0 transition-all duration-300 ease-in-out overflow-hidden",
-                openIndex === index
-                  ? "max-h-[500px] py-2 opacity-100"
-                  : "max-h-0 opacity-0"
-              )}
+              key={index}
+              className="border border-gray-200 rounded-md overflow-hidden"
             >
-              <p className="text-sm text-gray-700">{faq.answer}</p>
+              <button
+                onClick={() => toggle(index)}
+                className="cursor-pointer w-full text-sm flex justify-between items-center text-left px-4 py-3 hover:bg-gray-100 transition"
+              >
+                <span className={clsx(isOpen && "opacity-40")}>
+                  {faq.question}
+                </span>
+
+                <ChevronDown
+                  className={clsx(
+                    "h-5 w-5 transform transition-transform duration-300",
+                    isOpen && "rotate-180"
+                  )}
+                />
+              </button>
+              <div
+                className={clsx(
+                  "px-4 pt-0 transition-all duration-300 ease-in-out overflow-hidden",
+                  isOpen
+                    ? "max-h-[500px] py-2 opacity-100"
+                    : "max-h-0 opacity-0"
+                )}
+              >
+                <p className="text-sm text-gray-700">{faq.answer}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-center text-xs text-zinc-700 p-4 border-t border-gray-700/20">
-        <span className={`${geistMono.className}`}>&#169;</span>Biz{" "}
+        <span className={`${geistMono.className}`}>&#169;</span>Blinkers{" "}
         {new Date().getFullYear()}
       </p>
     </div>

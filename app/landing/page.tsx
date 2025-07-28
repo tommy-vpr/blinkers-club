@@ -38,12 +38,14 @@ const page = () => {
       />
       <div className={`text-center ${spaceMono.className}`}>
         <ul className="flex flex-col gap-4 text-gray-50 text-xs tracking-widest text-center">
-          <li
-            className="w-fit text-center cursor-pointer hover:bg-emerald-500 transition 
+          <Link href={"/landing"}>
+            <li
+              className="w-fit text-center cursor-pointer hover:bg-emerald-500 transition 
           duration-200 hover:translate-x-1.5 px-3 py-1"
-          >
-            Home
-          </li>
+            >
+              Home
+            </li>
+          </Link>
           <Link href={"/landing/shop"}>
             <li
               className="w-fit text-center cursor-pointer hover:bg-emerald-500 transition 
@@ -109,7 +111,7 @@ const page = () => {
           </p>
         </div>
         <p className="text-center text-xs text-zinc-700 p-4 border-t border-gray-700/20">
-          <span className={`${geistMono.className}`}>&#169;</span>Biz{" "}
+          <span className={`${geistMono.className}`}>&#169;</span>Blinkers{" "}
           {new Date().getFullYear()}
         </p>
       </div>
